@@ -13,3 +13,8 @@ Criar migration
 
  rodar migration
  npx ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/config/data-source.ts
+
+
+nest g module users
+nest g service users
+nest g controller users

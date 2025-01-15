@@ -6,6 +6,8 @@ import { GovernosService } from './governos/governos.service';
 import { Governo } from './governos/governo.entity';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { ServidorModule } from './servidor/servidor.module';
+import { ServidorAuthModule } from './ServidorAuth/servidor-auth.module';
 
 @Module({
   imports: [
@@ -23,6 +25,8 @@ import { AuthModule } from './auth/auth.module';
     TypeOrmModule.forFeature([Governo]),
     UsersModule,
     AuthModule,
+    ServidorModule,
+    ServidorAuthModule,
   ],
   controllers: [GovernosController],
   providers: [GovernosService],
