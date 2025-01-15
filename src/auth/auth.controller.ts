@@ -1,5 +1,6 @@
-import { Controller, Post, Body, Param, UnauthorizedException } from '@nestjs/common';
+import { Controller, Post, Body, Param, UnauthorizedException, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { JwtAuthGuard } from './jwt-auth.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -17,5 +18,12 @@ export class AuthController {
     } catch {
       throw new UnauthorizedException('Invalid email, password, or link name');
     }
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Post('refresh-token')
+  async refreshToken() {
+    // Lógica para renovar o token, se necessário
+    return { message: 'Token refreshed' };
   }
 }
