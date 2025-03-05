@@ -15,8 +15,6 @@ A set of **NestJS APIs** for managing loan consignment operations, including CRU
 Clone the repository and install dependencies:
 
 ```sh
-git clone https://github.com/your-username/loan-consignment-api.git
-cd loan-consignment-api
 npm install
 ```
 
